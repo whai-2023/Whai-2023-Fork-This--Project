@@ -4,14 +4,39 @@ const db = require('../db/db')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  db.getUsers()
-    .then((users) => {
-      res.render('index', { users: users })
-    })
-    .catch((err) => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
-    })
+
+// Home Page
+router.get('/', async (req, res) => {
+  try {
+    const users = await db.getUsers()
+    res.render('index', { users: users })
+  } catch (err) {
+    res.send('DATABASE ERROR: ' + 'Home Route Problem')
+  }
+})
+
+
+
+// Customize Page
+
+router.get('/customize', async (req, res) => {
+  try {
+    const users = await db.getUsers()
+    res.render('customize', { users: users })
+  } catch (err) {
+    res.send('DATABASE ERROR: ' + 'Customize Route Problem')
+  }
+})
+
+// Checkout Page
+
+router.get('/checkout', async (req, res) => {
+  try {
+    const users = await db.getUsers()
+    res.render('checkout', { users: users })
+  } catch (err) {
+    res.send('DATABASE ERROR: ' + 'Checkout Route Problem')
+  }
 })
 
 module.exports = router

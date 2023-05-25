@@ -13,5 +13,8 @@ server.use(express.urlencoded({ extended: true }))
 
 // Routes
 server.use('/', userRoutes)
+server.use('/customize', userRoutes)
+server.use('/checkout', userRoutes)
+
 
 module.exports = server
