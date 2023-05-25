@@ -4,7 +4,9 @@
   border-bottom: 300px solid black; /* height of the trapezoid */
   border-left: 30px solid transparent; /* left slant */
   border-right: 30px solid transparent; /* right slant */
-  margin: auto
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .lavalamp2 {
@@ -13,13 +15,37 @@
   border-top: 60px solid black; /* height of the trapezoid */
   border-left: 20px solid transparent; /* left slant */
   border-right: 20px solid transparent; /* right slant */
-  margin: auto
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
+
 .lavalamp-base {
   width: 120px;
   height: 0;
   border-bottom: 100px solid blue; /* height of the trapezoid */
   border-left: 20px solid transparent; /* left slant */
   border-right: 20px solid transparent; /* right slant */
-  margin: auto
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.lavalamp-select {
+  width: 60px;
+  height: 0;
+  border-bottom: 20px solid blue; /* height of the trapezoid */
+  border-left: 20px solid transparent; /* left slant */
+  border-right: 20px solid transparent; /* right slant */
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+#canvas {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
