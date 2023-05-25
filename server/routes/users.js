@@ -4,7 +4,6 @@ const db = require('../db/db')
 
 const router = express.Router()
 
-
 // Home Page
 router.get('/', async (req, res) => {
   try {
@@ -14,8 +13,6 @@ router.get('/', async (req, res) => {
     res.send('DATABASE ERROR: ' + 'Home Route Problem')
   }
 })
-
-
 
 // Customize Page
 
