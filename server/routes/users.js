@@ -4,7 +4,6 @@ const db = require('../db/db')
 
 const router = express.Router()
 
-
 // Home Page
 router.get('/', async (req, res) => {
   try {
