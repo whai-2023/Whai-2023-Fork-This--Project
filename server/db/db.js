@@ -1,16 +1,30 @@
 const environment = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[environment]
-const connection = require('knex')(config)
+const db = require('knex')(config)
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers,
+  getReceipts,
+  getProducts,
+  getCustomers,
+  //getUsers: getUsers,
 }
 
-function getUsers(db = connection) {
-  return db('users').select()
+// function getUsers(db = connection) {
+//   return db('users').select()
+// }
+
+// function getUser(id, db = connection) {
+//   return db('users').where('id', id).first()
+// }
+
+function getReceipts() {
+  return db('receipts').select()
 }
 
-function getUser(id, db = connection) {
-  return db('users').where('id', id).first()
+function getProducts() {
+  return db('products').select()
+}
+
+function getCustomers() {
+  return db('customers').select()
 }
