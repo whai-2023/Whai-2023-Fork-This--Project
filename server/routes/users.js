@@ -15,8 +15,6 @@ router.get('/', async (req, res) => {
   }
 })
 
-
-
 // Customize Page
 
 router.get('/customize', async (req, res) => {
