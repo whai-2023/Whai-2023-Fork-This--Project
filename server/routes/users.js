@@ -8,8 +8,8 @@ const router = express.Router()
 // Home Page
 router.get('/', async (req, res) => {
   try {
-    const users = await db.getUsers()
-    res.render('index', { users: users })
+    const customers = await db.getCustomers()
+    res.render('index', { customers: customers })
   } catch (err) {
     res.send('DATABASE ERROR: ' + 'Home Route Problem')
   }
@@ -21,8 +21,8 @@ router.get('/', async (req, res) => {
 
 router.get('/customize', async (req, res) => {
   try {
-    const users = await db.getUsers()
-    res.render('customize', { users: users })
+    const products = await db.getProducts()
+    res.render('customize', { products: products })
   } catch (err) {
     res.send('DATABASE ERROR: ' + 'Customize Route Problem')
   }
@@ -32,8 +32,8 @@ router.get('/customize', async (req, res) => {
 
 router.get('/checkout', async (req, res) => {
   try {
-    const users = await db.getUsers()
-    res.render('checkout', { users: users })
+    const receipts = await db.getReceipts()
+    res.render('checkout', { receipts: receipts })
   } catch (err) {
     res.send('DATABASE ERROR: ' + 'Checkout Route Problem')
   }
