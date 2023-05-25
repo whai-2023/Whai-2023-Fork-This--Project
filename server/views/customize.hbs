@@ -14,9 +14,11 @@
         </div>
         
         <div class="column is-half">
-          <ul id="prices">
-            {{#each users}}
-            <li>{{email}}</li>
+          <ul>
+            {{#each products}}
+            <li>
+              #{{id}} - {{lava_color}} - {{base_color}} - {{price}}
+            </li>
             {{/each}}
           </ul>
         </div>

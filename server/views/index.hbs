@@ -1,6 +1,6 @@
 <body>
   <div class="leftPanel columns is-flex is-justify-content-center">
-    <article class="message">
+    <article class="message is-half">
       <div class="message-header">
         <h1>Welcome! 😎</h1>
       </div>
@@ -17,7 +17,7 @@
           </ul>  
         </div>
       </article>
-    </div>
+  </div>
     
     <div class="rightPanel column is-half">
       <div style="position: relative;">
@@ -25,14 +25,5 @@
         <img src="/images/lavaLampBase/silver.png" alt="Test Image" style="position: relative;">
       </div>
     </div>
-    
-    <ul>
-      {{#each products}}
-      <li>
-        <img src="/images/" alt="Product Image{{id}}">
-        #{{id}} - {{lava_color}} - {{base_color}} - {{price}}
-      </li>
-      {{/each}}
-    </ul>
   </div>
 </body>
