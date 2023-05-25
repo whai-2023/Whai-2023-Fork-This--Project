@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const baseImage = document.querySelector('#baseImage')
 
   const products = [
-    { id: 1, image: '/path/to/lava/image1.png' },
+    { id: 1, image: '/images/lavaLampBody/' },
     { id: 2, image: '/path/to/lava/image2.png' },
     { id: 3, image: '/path/to/lava/image3.png' },
     // Add more images here

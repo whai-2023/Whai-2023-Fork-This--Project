@@ -1,53 +1,49 @@
-<html>
-  <body>
-    <div class="leftPanel columns is-flex is-justify-content-center">
-      <article class="message">
-        <div class="message-header">
-          <p>Hello World</p>
-        </div>
-        <div class="message-body">
-          <h3>How would you like to select your product?</h3>
-        </div>         
-        <div class="column is-half">
-          {{!-- randomizeButton --}}
-          <button class="button">Change Body</button>        <button class="button">Change Base</button>        
-        </div>
-        
-        <div class="column is-half">
-          <ul>
-            {{#each products}}
-            <li>
-              #{{id}} - {{lava_color}} - {{base_color}} - {{price}}
-            </li>
-            {{/each}}
-          </ul>
+<div class="columns is-gapless is-multiline is-mobile">
+  <div class="column is-half">
+    <article class="message">
+      <div class="message-header">
+        <p>Customize</p>
+      </div>
+      <div class="message-body">
+        <h3>How would you like to select your product?</h3>
+        <div class="columns">
+          <div class="column">
+            <button class="button" id="changeLava">Change Lava</button>
+            <button class="button" id="changeBase">Change Base</button>
+          </div>
+          <div class="column">
+            <ul>
+              {{#each products}}
+              <li>
+                <img src="{{image}}" alt="Product Image{{id}}">
+                #{{id}} - {{lava_color}} - {{base_color}} - {{price}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
         </div>
         <form id="myForm" action="/checkout" method="POST">
-              <label for="lava_color">Lava colour</label><br>
-              <input type="text" name="lava_color" id="lava_color" value="{{lava_color}}">
-              <br>
-              <label for="base_color">Base colour</label><br>
-              <input type="text" name="base_color" id="base_color" value="{{base_color}}">
-              <br>
-              <label for="price">Price</label><br>
-              <input type="text">
-              <br>
-              {{!-- <button type="submit"><a href="/checkout">Buy</a></button> --}}
-                          
-            <button type="submit">Checkout</button> 
+          <label for="lava_color">Lava colour</label><br>
+          <input type="text" name="lava_color" id="lava_color" value="{{lava_color}}">
+          <br>
+          <label for="base_color">Base colour</label><br>
+          <input type="text" name="base_color" id="base_color" value="{{base_color}}">
+          <br>
+          <label for="price">Price</label><br>
+          <input type="text">
+          <br>
+          <button type="submit">Checkout</button> 
         </form>
-      </article>
-    
-    {{!-- {{>lavalamp}}     --}}
-    <div class="rightPanel column">
-      <div style="position: relative;">
-        <img src="/images/lavaLampBody/yellowOrange.png" alt="Test Image" style="position: absolute; top: 0; left: 0;">
-        <img src="/images/lavaLampBase/white.png" alt="Test Image" style="position: relative;">
-      </div>
-    </div>
-
-    {{!-- <script src="/lib/js/main.js"></script> --}}
+      </div>     
+    </article>
+  </div>   
   
-  </body>
-</html>
-
+  <div class="column is-half">
+    <div id="imageContainer" style="position: relative;">
+      {{!-- placeholder --}}
+      <img id="lavaImage" src="/images/lavaLampBody/yellowOrange.png" alt="Lava Image" style="position: absolute; top: 0; left: 0;">
+      <img id="baseImage" src="/images/lavaLampBase/white.png" alt="Base Image" style="position: relative;">
+    </div>
+  </div>
+</div>
+<script src="/public/changeImage.js"></script>
