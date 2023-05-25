@@ -1,5 +1,38 @@
-<ul>
-  {{#each customers}}
-  <li>#{{id}} - {{name}} - {{location}} - {{adjective}}</li>
-  {{/each}}
-</ul>
+<body>
+  <div class="leftPanel columns is-flex is-justify-content-center">
+    <article class="message">
+      <div class="message-header">
+        <h1>Welcome! 😎</h1>
+      </div>
+      <div class="message-body">
+        <h2>Do you want to make your very own customised lava lamp?</h2>
+        <button class="button" id="createButton"><a href="/customize">Click here to create</a></button>  
+      </div>
+      <div class="column is-half">
+        <div class=""> 
+          <ul>
+            {{#each customers}}
+            <li>#{{id}} - {{name}} - {{location}} - {{adjective}}</li>
+            {{/each}}
+          </ul>  
+        </div>
+      </article>
+    </div>
+    
+    <div class="rightPanel column is-half">
+      <div style="position: relative;">
+        <img src="/images/lavaLampBody/blueGreen.png" alt="Test Image" style="position: absolute; top: 0; left: 0;">
+        <img src="/images/lavaLampBase/silver.png" alt="Test Image" style="position: relative;">
+      </div>
+    </div>
+    
+    <ul>
+      {{#each products}}
+      <li>
+        <img src="/images/" alt="Product Image{{id}}">
+        #{{id}} - {{lava_color}} - {{base_color}} - {{price}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</body>

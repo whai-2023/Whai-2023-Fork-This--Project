@@ -1,46 +1,125 @@
-.lavalamp {
-  width: 100px;
-  height: 0;
-  border-bottom: 300px solid black; /* height of the trapezoid */
-  border-left: 30px solid transparent; /* left slant */
-  border-right: 30px solid transparent; /* right slant */
-  margin: auto;
-  position: relative;
-  z-index: 1;
+
+
+body {
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  
+}
+/* .container {
+  display: flex;
+} */
+
+.customizeForm {
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+.leftPanel {
+  padding-left: 20px;
+}
+.rightPanel {
+  align-items: center;
 }
 
-.lavalamp2 {
+.button {
+  margin: 0 auto;
+  width: auto;
+  padding: 1em;
+  padding-top: 10px;
+  border: 1px solid #000000;
+  border-radius: 1em;
+}
+
+#createButton {
+  margin: 0 auto;
+  width: auto;
+  padding: 1em;
+  padding-top: 10px;
+  border: 1px solid #000000;
+  border-radius: 1em;
+}
+
+/* navbar */
+nav {
+  background-color: #edb9b9;
+  color: #fff;
+}
+/* header and footer */
+
+.header {
+  /* position in the center; */
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer {
+  /* position at the bottom right of page but 20 px to the left*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* margin-right: 20px; */
+
+}
+
+/* stretch */
+
+.lavalamp {
   width: 120px;
   height: 0;
-  border-top: 60px solid black; /* height of the trapezoid */
-  border-left: 20px solid transparent; /* left slant */
-  border-right: 20px solid transparent; /* right slant */
-  margin: auto;
+  border-bottom: 300px solid rgb(255, 0, 0); /* height of the trapezoid */
+  border-left: 30px solid transparent; /* left slant */
+  border-right: 30px solid transparent; /* right slant */
+  margin: 0;
   position: relative;
   z-index: 1;
+  align-items: center;
 }
 
 .lavalamp-base {
   width: 120px;
   height: 0;
-  border-bottom: 100px solid blue; /* height of the trapezoid */
+  border-top: 100px solid blue; /* height of the trapezoid */
   border-left: 20px solid transparent; /* left slant */
   border-right: 20px solid transparent; /* right slant */
-  margin: auto;
+  margin: 0;
   position: relative;
   z-index: 1;
+  align-items: center;
 }
 
-.lavalamp-select {
-  width: 60px;
+/* 
+.lavalamp2 {
+  width: 120px;
   height: 0;
-  border-bottom: 20px solid blue; /* height of the trapezoid */
-  border-left: 20px solid transparent; /* left slant */
-  border-right: 20px solid transparent; /* right slant */
+  border-top: 60px solid rgb(21, 255, 0); 
+  border-left: 20px solid transparent; 
+  border-right: 20px solid transparent;
   margin: auto;
   position: relative;
   z-index: 1;
-}
+} */
+
+/* 
+.lavalamp3 {
+  width: 120px;
+  height: 0;
+  border-top: 60px solid rgb(21, 255, 0); 
+  border-left: 20px solid transparent; 
+  border-right: 20px solid transparent;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+} */
+
 
 #canvas {
   background-color: black;
