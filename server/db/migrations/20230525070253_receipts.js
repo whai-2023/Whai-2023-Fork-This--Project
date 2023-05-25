@@ -1,15 +1,12 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = function(knex) {
+exports.up = (knex) => {
+    return knex.schema.createTable('receipts', (table) => {
+      table.increments('receipt_number').primary()
+      table.number('product_id')
+      table.number('buyer_id')
+      table.string('price')
+    })
+  }
   
-};
-
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = function(knex) {
-  
-};
+  exports.down = (knex) => {
+    return knex.schema.dropTable('receipts')
+  }
