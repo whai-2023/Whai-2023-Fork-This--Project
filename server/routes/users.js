@@ -20,12 +20,8 @@ router.get('/customize', async (req, res) => {
   try {
     const lavaColors = await db.getLavaColors()
     const baseColors = await db.getBaseColors()
-    const bodyPrice = [];
-    for (let i = 0; < baseColors.length; i++) {
-      
-    }
-    // const bodyPrice = (lavaColors[0].price)
-    // const basePrice = (baseColors[0].price) 
+    const bodyPrice = (lavaColors[0].price)
+    const basePrice = (baseColors[0].price) 
     const totalPrice = db.calculateTotalPrice(bodyPrice, basePrice)
     res.render('customize', { body: lavaColors, base: baseColors, totalPrice: totalPrice })
   } catch (err) {
