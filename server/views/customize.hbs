@@ -12,14 +12,7 @@
             <button class="button" id="changeBase">Change Base</button>
           </div>
           <div class="column">
-            <ul>
-              {{#each products}}
-              <li>
-                <img src="{{image}}" alt="Product Image{{id}}">
-                #{{id}} - {{lava_color}} - {{base_color}} - {{price}}
-              </li>
-              {{/each}}
-            </ul>
+            
           </div>
         </div>
         <form id="myForm" action="/checkout" method="POST">

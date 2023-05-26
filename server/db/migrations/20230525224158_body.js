@@ -5,10 +5,10 @@ const { toBeEnabled } = require("@testing-library/jest-dom/matchers");
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('lamp_body', (table) => {
+  return knex.schema.createTable('body', (table) => {
     table.increments('id')
-    table.string('liquid_colour')
-    table.string('wax_colour')
+    table.string('liquid_color')
+    table.string('wax_color')
     table.binary('image')
     table.string('price')
   })
