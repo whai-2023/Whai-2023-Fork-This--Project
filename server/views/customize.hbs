@@ -20,7 +20,7 @@
 
           <select name="lava_color" id="lava_color">
             {{#each body}}
-              <option value="{{liquid_color}}">{{liquid_color}}</option>
+              <option value="{{liquid_color}}">{{liquid_color}} - {{price}}</option>
             {{/each}}
           </select>
 
@@ -29,14 +29,16 @@
 
           <select name="base_color" id="base_color">
             {{#each base}}
-              <option value="{{base_color}}">{{base_color}}</option>
+              <option value="{{base_color}}">{{base_color}} - {{price}}</option>
             {{/each}}
           </select>
 
           <br>
           <label for="price">Price</label><br>
-          <input type="text">
+          <span id="priceLabel">{{totalPrice}}</span>
           <br>
+
+          
           <button type="submit">Checkout</button> 
         </form>
       </div>     

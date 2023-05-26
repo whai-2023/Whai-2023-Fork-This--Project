@@ -7,6 +7,8 @@ module.exports = {
   getCustomers,
   getLavaColors,
   getBaseColors,
+  calculateTotalPrice,
+  getCustomizedProducts,
   //getUsers: getUsers,
 }
 
@@ -36,4 +38,28 @@ function getLavaColors() {
 
 function getBaseColors() {
   return db('base').select()
+}
+
+function calculateTotalPrice(bodyPrice, basePrice) {
+  const total = parseInt(bodyPrice) + parseInt(basePrice)
+  return `$${total}`
+}
+
+function getCustomizedProducts() {
+  return db('customerChoice as cc')
+    .join('body as b', 'cc.body_color_id', 'b.id')
+    .join('base as bs', 'cc.base_color_id', 'bs.id')
+    .select(
+      'cc.id',
+      'b.liquid_color',
+      'b.price as body_price',
+      'bs.base_color',
+      'bs.price as base_price'
+    )
+    .map((product) => ({
+      ...product,
+      total_price: calculateTotalPrice(
+        parseInt(product.body_price),
+        parseInt(product.base_price)),
+    }))
 }
