@@ -19,6 +19,7 @@ server.set('views', __dirname + '/views')
 server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public'))
 server.use('/images', express.static('public/images'))
+server.use('/js', express.static('public/js'))
 
 // Routes
 server.use('/', userRoutes)

@@ -10,13 +10,17 @@
   <title>Dev Academy Phase 1 Express Boilerplate</title>
 </head>
 <body>
-  
-  <nav> 
-    <a href="/">Home</a>
-    {{!-- <a href="/about">About</a> --}}
-  </nav>
+  <div class="background-animation">
+    <canvas id="canvas" width="32" height="32"></canvas>
+  </div>
+
+  <div class="lava-lamp">
+    <nav> 
+      <a href="/">Home</a>
+      {{!-- <a href="/about">About</a> --}}
+    </nav>
     <div class="header">
-    {{>header}}
+      {{>header}}
     </div>
       
     {{{body}}}
@@ -24,10 +28,11 @@
     {{!-- <div>
       {{>footer}}
     </div> --}}
-
-    <script src="/lib/js/main.js"></script>  
   </div>
+
+  <script src="/js/mesh.js"></script>
 </body>
+
 </html>
 
 <!DOCTYPE html>
