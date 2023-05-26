@@ -4,7 +4,7 @@ exports.up = (knex) => {
       table.string('base_color')
       table.string('base_type')
       table.binary('image')
-      table.string('price')
+      table.integer('price')
     })
   }
   

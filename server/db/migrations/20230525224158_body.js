@@ -10,7 +10,7 @@ exports.up = function(knex) {
     table.string('liquid_color')
     table.string('wax_color')
     table.binary('image')
-    table.string('price')
+    table.integer('price')
   })
 };
 
