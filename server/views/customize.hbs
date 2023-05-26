@@ -18,7 +18,7 @@
         <form id="myForm" action="/checkout" method="POST">
           <label for="lava_color">Lava colour</label><br>
 
-          <select name="lava_color" id="lava_color">
+          <select name="lava_color" id="lava_color" onchange="updateLavaImage()">
             {{#each body}}
               <option value="{{liquid_color}}">{{liquid_color}} - {{price}}</option>
             {{/each}}
@@ -27,7 +27,7 @@
           <br>
           <label for="base_color">Base colour</label><br>
 
-          <select name="base_color" id="base_color">
+          <select name="base_color" id="base_color" onchange="updateBaseImage()">
             {{#each base}}
               <option value="{{base_color}}">{{base_color}} - {{price}}</option>
             {{/each}}
@@ -46,10 +46,10 @@
   </div>   
   
   <div class="column is-half">
-    <div id="imageContainer" style="position: relative;">
-      {{!-- placeholder --}}
-      <img id="lavaImage" src="/images/lavaLampBody/yellowOrange.png" alt="Lava Image" style="position: absolute; top: 0; left: 0;">
-      <img id="baseImage" src="/images/lavaLampBase/white.png" alt="Base Image" style="position: relative;">
+     <div id="imageContainer" style="position: relative;">
+      <img id="lavaImage" src="{{selectedLavaImage}}" alt="Lava Image" style="position: absolute; top: 0; left: 0;">
+      <img id="baseImage" src="{{selectedBaseImage}}" alt="Base Image" style="position: relative;">
+    </div>
     </div>
   </div>
 </div>

@@ -53,13 +53,16 @@ function getCustomizedProducts() {
       'cc.id',
       'b.liquid_color',
       'b.price as body_price',
+      'b.image_path as body_image',
       'bs.base_color',
-      'bs.price as base_price'
+      'bs.price as base_price',
+      'bs.image_path as base_image'
     )
     .map((product) => ({
       ...product,
       total_price: calculateTotalPrice(
         parseInt(product.body_price),
-        parseInt(product.base_price)),
+        parseInt(product.base_price)
+      ),
     }))
 }

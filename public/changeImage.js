@@ -1,27 +1,23 @@
-// JavaScript code
-document.addEventListener('DOMContentLoaded', () => {
-  const changeLavaButton = document.querySelector('#changeLava')
-  const changeBaseButton = document.querySelector('#changeBase')
-  const lavaImage = document.querySelector('#lavaImage')
-  const baseImage = document.querySelector('#baseImage')
+module.exports = {
+  updateLavaImage,
+  updateBaseImage,
+}
 
-  const products = [
-    { id: 1, image: '/images/lavaLampBody/' },
-    { id: 2, image: '/path/to/lava/image2.png' },
-    { id: 3, image: '/path/to/lava/image3.png' },
-    // Add more images here
-  ]
+function updateLavaImage() {
+  const lavaColorSelect = document.getElementById('lava_color')
+  const lavaImage = document.getElementById('lavaImage')
+  const selectedLavaColor = lavaColorSelect.value
 
-  let currentLavaIndex = 0
-  let currentBaseIndex = 0
+  // Replace the image source based on the selected color
+  lavaImage.src = `./images/lavaLampBody/${selectedLavaColor}.png`
+}
 
-  changeLavaButton.addEventListener('click', () => {
-    currentLavaIndex = (currentLavaIndex + 1) % products.length
-    lavaImage.src = products[currentLavaIndex].image
-  })
+function updateBaseImage() {
+  const baseColorSelect = document.getElementById('base_color')
+  const baseImage = document.getElementById('baseImage')
+  const selectedBaseColor = baseColorSelect.value
 
-  changeBaseButton.addEventListener('click', () => {
-    currentBaseIndex = (currentBaseIndex + 1) % products.length
-    baseImage.src = products[currentBaseIndex].image
-  })
-})
+  // Replace the image source based on the selected color
+  baseImage.src = `./images/lavaLampBase/${selectedBaseColor}.png`
+}
+
