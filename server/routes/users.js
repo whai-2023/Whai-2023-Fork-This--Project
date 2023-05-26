@@ -20,12 +20,18 @@ router.get('/customize', async (req, res) => {
   try {
     const lavaColors = await db.getLavaColors()
     const baseColors = await db.getBaseColors()
-    const bodyPrice = parseInt(lavaColors[0].price)
-    const basePrice = parseInt(baseColors[0].price) 
+    const bodyPrice = parseInt(lavaColors.price)
+    const basePrice = parseInt(baseColors.price)
     const totalPrice = db.calculateTotalPrice(bodyPrice, basePrice)
-    res.render('customize', { body: lavaColors, base: baseColors, totalPrice: totalPrice.total_price })
+    res.render('customize', {
+      body: lavaColors,
+      base: baseColors,
+      totalPrice: totalPrice,
+      selectedLavaImage: `/images/lavaLampBody/${lavaColors[0].image_path}.png`,
+      selectedBaseImage: `/images/lavaLampBase/${baseColors[0].image_path}.png`,
+    });
   } catch (err) {
-    res.send('DATABASE ERROR: ' + 'Customize Route Problem');
+    res.send('DATABASE ERROR: ' + 'Customize Route Problem')
   }
 })
 
