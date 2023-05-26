@@ -22,7 +22,7 @@ function getReceipts() {
 }
 
 function getProducts() {
-  return db('products').select()
+  return db('base').select()
 }
 
 function getCustomers() {
