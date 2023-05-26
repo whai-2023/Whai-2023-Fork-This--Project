@@ -4,8 +4,9 @@ const db = require('knex')(config)
 
 module.exports = {
   getReceipts,
-  getProducts,
   getCustomers,
+  getLavaColors,
+  getBaseColors,
   //getUsers: getUsers,
 }
 
@@ -21,10 +22,18 @@ function getReceipts() {
   return db('receipts').select()
 }
 
-function getProducts() {
-  return db('base').select()
-}
+// function getProducts() {
+//   return db('base').select()
+// }
 
 function getCustomers() {
   return db('customers').select()
+}
+
+function getLavaColors() {
+  return db('body').select()
+}
+
+function getBaseColors() {
+  return db('base').select()
 }

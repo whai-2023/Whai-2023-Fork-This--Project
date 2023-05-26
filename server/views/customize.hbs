@@ -17,10 +17,22 @@
         </div>
         <form id="myForm" action="/checkout" method="POST">
           <label for="lava_color">Lava colour</label><br>
-          <input type="text" name="lava_color" id="lava_color" value="{{lava_color}}">
+
+          <select name="lava_color" id="lava_color">
+            {{#each body}}
+              <option value="{{liquid_color}}">{{liquid_color}}</option>
+            {{/each}}
+          </select>
+
           <br>
           <label for="base_color">Base colour</label><br>
-          <input type="text" name="base_color" id="base_color" value="{{base_color}}">
+
+          <select name="base_color" id="base_color">
+            {{#each base}}
+              <option value="{{base_color}}">{{base_color}}</option>
+            {{/each}}
+          </select>
+
           <br>
           <label for="price">Price</label><br>
           <input type="text">

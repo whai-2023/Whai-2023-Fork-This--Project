@@ -18,8 +18,9 @@ router.get('/', async (req, res) => {
 
 router.get('/customize', async (req, res) => {
   try {
-    const products = await db.getProducts()
-    res.render('customize', { products: products })
+    const lavaColors = await db.getLavaColors()
+    const baseColors = await db.getBaseColors()
+    res.render('customize', { body: lavaColors, base: baseColors })
   } catch (err) {
     res.send('DATABASE ERROR: ' + 'Customize Route Problem')
   }
